@@ -217,6 +217,9 @@ class Script(scripts.Script):
 
     self.set_infotext_fields(p, self.latest_params)
 
+  def postprocess(self, p, processed, *args):
+      self.restore_networks(p.sd_model)
+
 
 def on_script_unloaded():
     if shared.sd_model:
