@@ -155,7 +155,7 @@ class Script(scripts.Script):
     unet = p.sd_model.model.diffusion_model
     text_encoder = p.sd_model.cond_stage_model
 
-    if not args[0]:
+    if not args or not args[0]:
       self.restore_networks(p.sd_model)
       return
 
